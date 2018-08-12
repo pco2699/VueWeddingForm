@@ -25,9 +25,7 @@ export default {
 }
 </script>
 <style scoped>
-  div.message {
-    margin: 0 20%;
-  }
+
   .overview {
     padding: 5px;
     border-radius: 10px;
