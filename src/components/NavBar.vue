@@ -2,8 +2,6 @@
   <div class="NavBar">
     <md-toolbar class="md-primary">
       <h3 class="md-title">Wedding Form</h3>
-      <md-button>Hoge</md-button>
-      <md-button>Fuga</md-button>
     </md-toolbar>
   </div>
 </template>
