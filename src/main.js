@@ -7,7 +7,7 @@ import VueFire from 'vuefire'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
+import './assets/css/theme.scss'
 import config from './firebaseConfig'
 
 Vue.use(MdButton)

@@ -1,14 +1,14 @@
 <template>
   <form class="Wform" @submit.prevent="validate">
     <div class="md-layout md-gutter">
-      <div class="md-layout-item md-medium-size-25">
+      <div class="md-layout-item md-medium-size-50">
         <md-field :class="getValidationClass('firstName')">
           <label for="first_name">姓</label>
           <md-input id="first_name" name="first_name" v-model="form.firstName" @input="first_phonetic" @keyup="first_phonetic" required :disabled="sending"></md-input>
           <span class="md-error" v-if="!$v.form.firstName.required">必須項目です</span>
         </md-field>
       </div>
-      <div class="md-layout-item md-medium-size-25">
+      <div class="md-layout-item md-medium-size-50">
         <md-field :class="getValidationClass('lastName')">
           <label for="last_name">名</label>
           <md-input id="last_name" name="last_name" v-model="form.lastName" @input="last_phonetic" @keyup="last_phonetic" required :disabled="sending"></md-input>
@@ -17,14 +17,14 @@
       </div>
     </div>
     <div class="md-layout md-gutter">
-      <div class="md-layout-item md-medium-size-25">
+      <div class="md-layout-item md-medium-size-50">
         <md-field :class="getValidationClass('firstNamePhonetic')">
           <label for="first_name_phonetic">姓(ふりがな)</label>
           <md-input id="first_name_phonetic" name="first_name_phonetic" v-model="form.firstNamePhonetic" required :disabled="sending"></md-input>
           <span class="md-error" v-if="!$v.form.firstNamePhonetic.required">必須項目です</span>
         </md-field>
       </div>
-      <div class="md-layout-item md-medium-size-25">
+      <div class="md-layout-item md-medium-size-50">
         <md-field :class="getValidationClass('lastNamePhonetic')">
           <label for="last_name_phonetic">名(ふりがな)</label>
           <md-input id="last_name_phonetic" name="last_name_phonetic" v-model="form.lastNamePhonetic" required :disabled="sending"></md-input>
