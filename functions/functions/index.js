@@ -10,7 +10,12 @@ const functions = require('firebase-functions');
 admin.initializeApp();
 
 exports.userlist = functions.https.onRequest((request, response) => {
-  const json2csv = require("json2csv").parse;
+  const json2csv = require('json2csv');
+  const fields = ['presence', 'contact', 'firstName', 'lastName', 'firstNamePhonetic', 'lastNamePhonetic', 'message'];
+  const opts = {
+    fields: fields,
+    withBOM: true
+  }
   const db = admin.firestore();
   const ordersRef = db.collection('presences');
   return ordersRef.get()
@@ -20,7 +25,7 @@ exports.userlist = functions.https.onRequest((request, response) => {
         const order = doc.data();
         orders.push(order);
       });
-      const csv = json2csv(orders);
+      const csv = json2csv.parse(orders, opts);
       response.setHeader(
         "Content-disposition",
         "attachment; filename=users.csv"
